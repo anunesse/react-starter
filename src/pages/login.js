@@ -4,6 +4,7 @@ import { TextField, Button, Card, CardContent, CardActions, Typography } from '@
 import { withStyles } from '@material-ui/core/styles';
 import withRoot from '../withRoot';
 import { BrowserRouter as Router, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
     card: {
@@ -58,8 +59,8 @@ class Login extends React.Component {
                                 <TextField
                                     id="email"
                                     label="Email"
-                                    className={classes.textField}
                                     name="email"
+                                    className={classes.textField}
                                     value={this.state.email}
                                     onChange={this.handleChange}
                                     fullWidth/>
@@ -67,8 +68,8 @@ class Login extends React.Component {
                                     id="password"
                                     type="password"
                                     label="Password"
-                                    className={classes.textField}
                                     name="password"
+                                    className={classes.textField}
                                     value={this.state.password}
                                     onChange={this.handleChange}
                                     fullWidth/>
@@ -90,4 +91,8 @@ Login.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withRoot(withStyles(styles)(Login));
+const mapStateToProps = state => {
+    return state;
+};
+
+export default connect(mapStateToProps)(withRoot(withStyles(styles)(Login)));

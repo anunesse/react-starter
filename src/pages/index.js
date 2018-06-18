@@ -8,7 +8,6 @@ import Home from "./home";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
@@ -29,7 +28,7 @@ class AuthExample extends React.Component {
                 <Typography variant="title" color="inherit" className={classes.flex}>
                   MACHINA
                 </Typography>
-                <Button color="inherit">Logout</Button>
+                {/*<Button color="inherit">Logout</Button>*/}
               </Toolbar>
             </AppBar>
 
