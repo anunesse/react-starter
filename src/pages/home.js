@@ -7,6 +7,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import data from '../data';
 
 const styles = theme => ({
     root: {
@@ -47,6 +49,22 @@ class ButtonAppBar extends React.Component {
                             </Card>
                         </Grid>
                     ))}
+                    <Grid item sm={8}>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <LineChart
+                                    width={1100} height={500} data={data}
+                                    margin={{ top: 40, right: 40, bottom: 20, left: 20 }}>
+                                    <CartesianGrid vertical={false} />
+                                    <Tooltip/>
+                                    <XAxis dataKey="date" minTickGap={40} />
+                                    <YAxis domain={['auto', 'auto']} />
+                                    <Line dataKey="price" stroke="#ff7300" dot={false} />
+                                    <Line dataKey="trend" stroke="#f573f0" dot={false} />
+                                </LineChart>
+                            </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
             </Router>
         )
