@@ -36,6 +36,7 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
+        console.info('STATE: ', this.state);
         e.preventDefault();
         this.setState({ submitted: true });
     }
@@ -91,8 +92,16 @@ Login.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = state => {
-    return state;
+const mapStateToProps = (state, ownProps) => {
+    console.info('mapStateToProps', state, ownProps);
+    return { };
 };
 
-export default connect(mapStateToProps)(withRoot(withStyles(styles)(Login)));
+const mapDispatchToProps = (dispatch, ownProps) => {
+    console.info('mapDispatchToProps', dispatch, ownProps);
+    return {
+        onClick: () => { }
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRoot(withStyles(styles)(Login)));

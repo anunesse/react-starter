@@ -6,6 +6,7 @@ import {
 import Login from "./login";
 import Home from "./home";
 import AppBar from '@material-ui/core/AppBar';
+import Avatar from '@material-ui/core/Avatar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
@@ -16,7 +17,7 @@ const styles = {
     }
 };
 
-class AuthExample extends React.Component {
+class Main extends React.Component {
   render() {
     const { classes } = this.props;
 
@@ -28,7 +29,7 @@ class AuthExample extends React.Component {
                 <Typography variant="title" color="inherit" className={classes.flex}>
                   MACHINA
                 </Typography>
-                {/*<Button color="inherit">Logout</Button>*/}
+                <Avatar>A</Avatar>
               </Toolbar>
             </AppBar>
 
@@ -40,4 +41,4 @@ class AuthExample extends React.Component {
   }
 }
 
-export default withStyles(styles)(AuthExample);
+export default withStyles(styles)(Main);
