@@ -1,4 +1,4 @@
-# React MACHINA
+# React STARTER
 
 ## How to use
 Install it and run:
