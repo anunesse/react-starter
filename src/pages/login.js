@@ -36,7 +36,6 @@ class Login extends React.Component {
     }
 
     handleSubmit(e) {
-        console.info('STATE: ', this.state);
         e.preventDefault();
         this.setState({ submitted: true });
     }

@@ -33,8 +33,8 @@ class Main extends React.Component {
               </Toolbar>
             </AppBar>
 
-            <Route path="/home" component={Home} />
-            <Route path="/" component={Login} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Login} />
           </div>
         </Router>
     )
